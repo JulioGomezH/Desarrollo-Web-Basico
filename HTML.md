@@ -24,7 +24,7 @@ Los elementos compuestos por una solo etiqueta se usan para modificar el conteni
 
 ![[figura1.png]]
 Los elementos y las etiquetas no son exactamente los mismo, aunque muchas personas usan los términos de manera indistinta.
-- El nombre de la **etiqueta** es el contenido que esta entre corchetes angulares. La etiqueta incluye los corchetes en este caso: `<h1>.
+- El nombre de la **etiqueta** es el contenido que esta entre corchetes angulares. La etiqueta incluye los corchetes en este caso: `<h1>`.
 - Un **elemento** son las etiquetas de apertura y cierre, y todo el contenido entre ellas, incluidos los elementos anidados, como se presenta en el siguiente ejemplo.
 
 ```html
