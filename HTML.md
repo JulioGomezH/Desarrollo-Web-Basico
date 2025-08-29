@@ -1,3 +1,4 @@
+# HTML (HyperText Markup Language)
 ## ¿Qué es Html?
 HTML (HyperText Markup Language) es un lenguaje compuesto por un grupo de etiquetas definidas con un nombre rodeado de paréntesis angulares <>. Los paréntesis angulares delimitan la etiqueta y el nombre define el tipo de contenido que representa.
 
@@ -24,7 +25,7 @@ Los elementos compuestos por una solo etiqueta se usan para modificar el conteni
 
 ![[figura1.png]]
 Los elementos y las etiquetas no son exactamente los mismo, aunque muchas personas usan los términos de manera indistinta.
-- El nombre de la **etiqueta** es el contenido que esta entre corchetes angulares. La etiqueta incluye los corchetes en este caso: `<h1>.
+- El nombre de la **etiqueta** es el contenido que esta entre corchetes angulares. La etiqueta incluye los corchetes en este caso: `<h1>`.
 - Un **elemento** son las etiquetas de apertura y cierre, y todo el contenido entre ellas, incluidos los elementos anidados, como se presenta en el siguiente ejemplo.
 
 ```html
@@ -67,7 +68,7 @@ Existen varios valores disponibles para el atributo *lang*:
 | Es - Mx   | Español - México   |
 | En        | Ingles             |
 | Fr        | Fránces            |
-## `<head>`
+### `<head>`
 El head o encabezado de metadatos del documento, contiene todos los metadatos de un sitio o una aplicación. Este elemento se usa para definir la información necesaria para configurar la pagina web, como el titulo , el tipo de codificación de caracteres y los archivos externos requeridos del documento.
 
 ```html
@@ -79,10 +80,10 @@ El head o encabezado de metadatos del documento, contiene todos los metadatos de
 
 <html/>
 ```
-### Componentes obligatorios dentro de `<head>`
+#### Componentes obligatorios dentro de `<head>`
 Los metadatos del documento, incluidos el título, el grupo de caracteres, la configuración del viewport, la descripción, la URL base, los vínculos a las hojas de estilo y los íconos, se encuentran en el elemento `<head>`. Si bien es posible que no necesites todas estas funciones, incluye siempre el grupo de caracteres, el título y la configuración del viewport.
 
-#### Codificación de caracteres
+##### Codificación de caracteres
 El primer elemento de head debe ser la declaración de codificación de caracteres de charset. Se encuentra antes del titulo para garantizar que el navegador pueda procesar los caracteres de ese titulo y todos los caracteres del resto del documento.
 Se debe usar UTF-8, ya que se habilita la codificación de uno a cuatro bytes para todos los caracteres, es el tipo de codificación requerida por HTML5.
 
@@ -96,8 +97,9 @@ Se debe usar UTF-8, ya que se habilita la codificación de uno a cuatro bytes pa
 </html>
 ```
 
-#### Metadatos viewport
+##### Metadatos viewport
 La otra metaetiqueta que debe considerarse esencial es la viewport, que ayuda a mejorar la capacidad de respuesta del sitio y permite que el contenido se procese correctamente de forma predeterminada, sin importar el ancho de la viewport.
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -108,8 +110,8 @@ La otra metaetiqueta que debe considerarse esencial es la viewport, que ayuda a 
 
 </html>
 ```
-
-#### Titulo del documento
+El código anterior significa "hacer que el sitio sea responsivo, comenzando por hacer que el ancho del contenido sea el ancho de la pantalla". Además de width, puedes configurar el zoom y la escalabilidad, pero ambos tienen valores accesibles de forma predeterminada
+##### Titulo del documento
 Este elemento define el titulo de la pagina
 
 ```html
@@ -123,3 +125,56 @@ Este elemento define el titulo de la pagina
 
 </html>
 ```
+##### CSS
+Existen tres maneras de incluir css mediante `<link>`, `<style>` y el atributo style.
+Las dos formas principales de incluir estilos en tu archivo HTML son incluir un recurso externo mediante un elemento `<link>` con el atributo **rel** establecido en **stylesheet** o CSS directamente en el encabezado de tu documento dentro de las etiquetas `<style>` de apertura y cierre.
+
+Los estilos, ya sea mediante `<link>` o `<style>`, o ambos, deben ir en el encabezado. Funcionarán si se incluyen en el cuerpo del documento, pero por motivos de rendimiento es recomendable que aparezcan en el encabezado.
+##### `<link>`
+Este elemento especifica la relación entre el documento y un recurso externo (generalmente usado para cargar archivos css). El elemento puede incluir los atributos `href` para declarar la ubicación del recurso, `rel` para definir el tipo de relación, `media` para especificar el medio al que al recurso esta asociado (pantalla, impresora) y `type` y `sizes` para declarar el tipo de recurso y su tamaño (usado a menudo para cargar iconos).
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titutlo de página</title>
+    <link rel="stylesheet" href="./style.css"> <!-- ELEMENTO LINK PARA CSS EXTERNO-->
+</head>
+
+</html>
+```
+Otros usos del elemento `<link>` usa la etiqueta `<link>` con el par atributo/valor `rel="icon"` para identificar el ícono de página que se usará en el documento.
+```html
+<link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="./img/favicon.png" />
+```
+
+##### `<style>`
+Este elemento se usa para declarar estilos css dentro del documento 
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titutlo de página</title>
+     <style>/*ESTILOS MEDIANTE ELEMENTOS STYLE*/
+     .estilosdentroencabezado{
+	     background-color: #23d634;
+     }
+	  </style>
+</head>
+
+</html>
+```
+
+##### `<script>`
+La etiqueta `<script>` se usa para incluir secuencias de comandos. El tipo predeterminado es JavaScript. Si incluyes cualquier otro lenguaje de programación, incluye el atributo **type** con el tipo de MIME, o bien **type="module"** si es un módulo de JavaScript. Las etiquetas `<script>` se pueden usar para encapsular tu código o descargar un archivo externo.
+
+Para incluir el código JavaScript de MLW en un archivo externo, puedes escribir lo siguiente:
+```js
+<script src="js/main.js" defer></script>
+```
+### `<body>`
+Este elemento delimita el contenido del documento, es la encargada de generar la parte visible de nuestro documento
