@@ -25,7 +25,7 @@ Los elementos compuestos por una solo etiqueta se usan para modificar el conteni
 
 ![[figura1.png]]
 Los elementos y las etiquetas no son exactamente los mismo, aunque muchas personas usan los términos de manera indistinta.
-- El nombre de la **etiqueta** es el contenido que esta entre corchetes angulares. La etiqueta incluye los corchetes en este caso: `<h1>`.
+- El nombre de la **etiqueta** es el contenido que esta entre corchetes angulares. La etiqueta incluye los corchetes en este caso: `<h1>``.
 - Un **elemento** son las etiquetas de apertura y cierre, y todo el contenido entre ellas, incluidos los elementos anidados, como se presenta en el siguiente ejemplo.
 
 ```html
@@ -125,56 +125,3 @@ Este elemento define el titulo de la pagina
 
 </html>
 ```
-##### CSS
-Existen tres maneras de incluir css mediante `<link>`, `<style>` y el atributo style.
-Las dos formas principales de incluir estilos en tu archivo HTML son incluir un recurso externo mediante un elemento `<link>` con el atributo **rel** establecido en **stylesheet** o CSS directamente en el encabezado de tu documento dentro de las etiquetas `<style>` de apertura y cierre.
-
-Los estilos, ya sea mediante `<link>` o `<style>`, o ambos, deben ir en el encabezado. Funcionarán si se incluyen en el cuerpo del documento, pero por motivos de rendimiento es recomendable que aparezcan en el encabezado.
-##### `<link>`
-Este elemento especifica la relación entre el documento y un recurso externo (generalmente usado para cargar archivos css). El elemento puede incluir los atributos `href` para declarar la ubicación del recurso, `rel` para definir el tipo de relación, `media` para especificar el medio al que al recurso esta asociado (pantalla, impresora) y `type` y `sizes` para declarar el tipo de recurso y su tamaño (usado a menudo para cargar iconos).
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titutlo de página</title>
-    <link rel="stylesheet" href="./style.css"> <!-- ELEMENTO LINK PARA CSS EXTERNO-->
-</head>
-
-</html>
-```
-Otros usos del elemento `<link>` usa la etiqueta `<link>` con el par atributo/valor `rel="icon"` para identificar el ícono de página que se usará en el documento.
-```html
-<link rel="icon" sizes="16x16 32x32 48x48" type="image/png" href="./img/favicon.png" />
-```
-
-##### `<style>`
-Este elemento se usa para declarar estilos css dentro del documento 
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titutlo de página</title>
-     <style>/*ESTILOS MEDIANTE ELEMENTOS STYLE*/
-     .estilosdentroencabezado{
-	     background-color: #23d634;
-     }
-	  </style>
-</head>
-
-</html>
-```
-
-##### `<script>`
-La etiqueta `<script>` se usa para incluir secuencias de comandos. El tipo predeterminado es JavaScript. Si incluyes cualquier otro lenguaje de programación, incluye el atributo **type** con el tipo de MIME, o bien **type="module"** si es un módulo de JavaScript. Las etiquetas `<script>` se pueden usar para encapsular tu código o descargar un archivo externo.
-
-Para incluir el código JavaScript de MLW en un archivo externo, puedes escribir lo siguiente:
-```js
-<script src="js/main.js" defer></script>
-```
-### `<body>`
-Este elemento delimita el contenido del documento, es la encargada de generar la parte visible de nuestro documento
